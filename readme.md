@@ -1,5 +1,4 @@
 
-
 ## 1. Setup
 
 ```
@@ -11,13 +10,16 @@ bin/phpunit
 
 
 ## 2. Our system publish async projections into rabbitmq, so you need to start it:
-```brew services start rabbitmq```
+```
+brew install rabbitmq
+brew services start rabbitmq
+```
 
 
 ## 3. Now you can play, for example:
 ```
-php bin/console account:create --email='whatever' --amount=1
-php bin/console account:update --email='whatever' --amount=1010
+php bin/console account:create --email='whatever' --amount=10
+php bin/console account:update --email='whatever' --amount=5
 ```
 
 Create snapshot (this should be automated with a cron job)
@@ -26,7 +28,7 @@ Create snapshot (this should be automated with a cron job)
 
 Create some more events if you wish after an snapshot
 
-```php bin/console account:update --email='whatever' --amount=6666```
+```php bin/console account:update --email='whatever' --amount=2```
 
 Get final state of an account (reconstitute)
 
@@ -83,3 +85,43 @@ Get final state of an account (reconstitute)
         <td>&#123;&#34;email&#34;:&#34;whatever&#34;&#44;&#34;amount&#34;:17&#44;&#34;created_on&#34;:&#34;2018-10-14T22:22:38.305103&#43;02:00&#34;&#125;</td>
     </tr>
 </table>
+
+
+
+-----
+
+# In progress:
+- [ ] Investigate versioning for snapshots
+- [ ] Add event handler to achieve eventual consistency 
+- [ ] Create test database
+
+## INVESTIGATE: Transactional model:
+
+- [x] Add command bus Presenttation -> Application services
+- [x] Create domain model with events
+- [x] Create Event store
+- [ ] Improve seralization of events -> use symfony component
+- [ ] Serialization should be moved from domain model?, is an infrastructure concern
+- [x] Create Snapshots store
+- [x] Create Projector to trigger Async projections to read model
+- [x] Create repository for events
+- [x] Improve concepts of DTOs between layers and interfaces
+- [x] Complete DI, autowire, etc.
+- [x] Finish CLI-commands and rename folder to "presentation" layer and use command bus
+- [x] Create publishers for projections in RabbitMQ
+- [ ] Add specifications pattern for policies (fluent specification?): Useful to validate emails?, is specification used instead for domain more than for application?
+- [ ] Add asynchronous transactional commands handling?. Investigate Event bus (SimpleBus can handle commands, events and async!!!)
+- [x] IMPORTANT! ___ Investigate how to create unique identifiers. In domain (GUID), or delegate to infrastructure (Id)?
+- [ ] Snapshot date of creation is not testable. Delegate creation date to application service
+- [ ] Replace rabbitmq for kafka? (fun?)
+- [x] Easiser way to debug doctrine repositories to avoid to make a "data driven" development?
+- [ ] Investigate surrogate id. Should be in domain model the surrogate id?, is really necessary?
+- [ ] IMPORTANT: domain model identity should be a value objects. Change to VO 
+- [x] Investigate how to store a VO into doctrine DB (custom mapping types)
+
+
+## INVESTIGATE:  Reporting model
+
+- [x] Create DB Doctrine
+- [ ] Implement individual projections to read model with Listener-Observer
+- [x] Create RabbitMQ consumers to consume write model events
