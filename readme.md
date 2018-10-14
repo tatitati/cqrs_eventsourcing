@@ -1,4 +1,8 @@
 
+# TODO:
+- [ ] Investigate versioning for snapshots
+- [ ] Add event handler to achieve eventual consistency 
+
 
 ## 1. Setup
 
