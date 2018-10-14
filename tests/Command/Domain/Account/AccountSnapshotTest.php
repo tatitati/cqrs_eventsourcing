@@ -6,6 +6,9 @@ use App\Tests\Builders\Account\BuilderAccountSnapshot;
 use DateTimeImmutable;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * @group domain
+ */
 class AccountSnapshotTest extends TestCase
 {
     const EMAIL = 'anemail@something.com';
