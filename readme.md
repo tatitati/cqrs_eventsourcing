@@ -16,8 +16,8 @@ bin/phpunit
 
 ## 3. Now you can play, for example:
 ```
-php bin/console account:create --email='whatever' --amount=1
-php bin/console account:update --email='whatever' --amount=1010
+php bin/console account:create --email='whatever' --amount=10
+php bin/console account:update --email='whatever' --amount=5
 ```
 
 Create snapshot (this should be automated with a cron job)
@@ -26,7 +26,7 @@ Create snapshot (this should be automated with a cron job)
 
 Create some more events if you wish after an snapshot
 
-```php bin/console account:update --email='whatever' --amount=6666```
+```php bin/console account:update --email='whatever' --amount=2```
 
 Get final state of an account (reconstitute)
 
