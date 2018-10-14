@@ -10,7 +10,10 @@ bin/phpunit
 
 
 ## 2. Our system publish async projections into rabbitmq, so you need to start it:
-```brew services start rabbitmq```
+```
+brew install rabbitmq
+brew services start rabbitmq
+```
 
 
 ## 3. Now you can play, for example:
