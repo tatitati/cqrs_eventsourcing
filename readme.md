@@ -45,25 +45,25 @@ Get final state of an account (reconstitute)
         <th>body_event</th>
     </tr>
     <tr>
-        <td>82</td>
+        <td>85</td>
         <td>whatever</td>
         <td>AccountWasCreated</td>
-        <td>2018-10-14 22:18:33</td>
-        <td>&#123;&#34;eventId&#34;:&#34;a61813cf-ef3a-4f4e-bc8c-71d222323469&#34;&#44;&#34;amount&#34;:10&#44;&#34;sourceId&#34;:&#34;whatever&#34;&#44;&#34;createdAt&#34;:&#34;2018-10-14T22:18:33.239700&#43;02:00&#34;&#44;&#34;classSource&#34;:&#34;AccountWasCreated&#34;&#125;</td>
+        <td>2018-10-14 22:22:23</td>
+        <td>&#123;&#34;eventId&#34;:&#34;934c4363-a0e8-449b-a3cf-ea3f89b54d64&#34;&#44;&#34;amount&#34;:10&#44;&#34;sourceId&#34;:&#34;whatever&#34;&#44;&#34;createdAt&#34;:&#34;2018-10-14T22:22:23.971994&#43;02:00&#34;&#44;&#34;classSource&#34;:&#34;AccountWasCreated&#34;&#125;</td>
     </tr>
     <tr>
-        <td>83</td>
+        <td>86</td>
         <td>whatever</td>
         <td>AccountWasUpdated</td>
-        <td>2018-10-14 22:18:35</td>
-        <td>&#123;&#34;eventId&#34;:&#34;2fa0d331-35f2-4404-93e4-be543193297e&#34;&#44;&#34;amount&#34;:1323&#44;&#34;email&#34;:&#34;whatever&#34;&#44;&#34;createdAt&#34;:&#34;2018-10-14T22:18:35.576895&#43;02:00&#34;&#44;&#34;classSource&#34;:&#34;AccountWasUpdated&#34;&#125;</td>
+        <td>2018-10-14 22:22:30</td>
+        <td>&#123;&#34;eventId&#34;:&#34;7eda0635-1f91-4a84-aeee-f1d8b35529f3&#34;&#44;&#34;amount&#34;:5&#44;&#34;email&#34;:&#34;whatever&#34;&#44;&#34;createdAt&#34;:&#34;2018-10-14T22:22:30.714798&#43;02:00&#34;&#44;&#34;classSource&#34;:&#34;AccountWasUpdated&#34;&#125;</td>
     </tr>
     <tr>
-        <td>84</td>
+        <td>87</td>
         <td>whatever</td>
         <td>AccountWasUpdated</td>
-        <td>2018-10-14 22:18:36</td>
-        <td>&#123;&#34;eventId&#34;:&#34;717e9396-852d-44e7-bcd6-cd0f799a89cf&#34;&#44;&#34;amount&#34;:1323&#44;&#34;email&#34;:&#34;whatever&#34;&#44;&#34;createdAt&#34;:&#34;2018-10-14T22:18:36.646475&#43;02:00&#34;&#44;&#34;classSource&#34;:&#34;AccountWasUpdated&#34;&#125;</td>
+        <td>2018-10-14 22:22:36</td>
+        <td>&#123;&#34;eventId&#34;:&#34;5746c492-f828-4ed2-b597-b411f36ce5a4&#34;&#44;&#34;amount&#34;:2&#44;&#34;email&#34;:&#34;whatever&#34;&#44;&#34;createdAt&#34;:&#34;2018-10-14T22:22:36.108211&#43;02:00&#34;&#44;&#34;classSource&#34;:&#34;AccountWasUpdated&#34;&#125;</td>
     </tr>
 </table>
 
@@ -77,9 +77,9 @@ Get final state of an account (reconstitute)
         <th>body_snapshot</th>
     </tr>
     <tr>
-        <td>20</td>
-        <td>snapshot&#64;email.com</td>
-        <td>2018-10-14 22:16:06</td>
-        <td>&#123;&#34;email&#34;:&#34;snapshot&#64;email.com&#34;&#44;&#34;amount&#34;:110&#44;&#34;created_on&#34;:&#34;2018-10-14T22:16:06.559350&#43;02:00&#34;&#125;</td>
+        <td>21</td>
+        <td>whatever</td>
+        <td>2018-10-14 22:22:38</td>
+        <td>&#123;&#34;email&#34;:&#34;whatever&#34;&#44;&#34;amount&#34;:17&#44;&#34;created_on&#34;:&#34;2018-10-14T22:22:38.305103&#43;02:00&#34;&#125;</td>
     </tr>
 </table>
