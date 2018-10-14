@@ -24,7 +24,5 @@ class History
         if (!$account) {
             return;
         }
-
-        print_r($account);
     }
 }
