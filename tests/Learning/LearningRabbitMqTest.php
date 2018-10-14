@@ -7,6 +7,11 @@ use PHPUnit\Framework\TestCase;
 
 class LearningRabbitMqTest extends TestCase
 {
+//    public function setUp()
+//    {
+//        $this->markTestSkipped('not intesrted on rabbitmq now');
+//    }
+
     public function testBasicPublish()
     {
         $this->givenPublishedMessage('Hello World!');
