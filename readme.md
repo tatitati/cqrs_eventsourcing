@@ -1,4 +1,4 @@
-## 1. Setup
+# 1. Setup
 Install/run rabbitmq (our system publish async projections into rabbitmq)
 ```
 brew install rabbitmq
@@ -22,7 +22,7 @@ bin/phpunit
 
 
 
-## 2. Now you can play, for example:
+# 2. Now you can play, for example:
 ```
 php bin/console account:create --email='whatever' --amount=10
 php bin/console account:update --email='whatever' --amount=-1000
@@ -44,7 +44,7 @@ Get final state of an account (reconstitute)
 
 
 
-# Event store example:
+## Event store example:
 
 <table>
     <tr>
@@ -85,7 +85,7 @@ Get final state of an account (reconstitute)
 </table>
 
 
-# Snapshot store example (snapshot created after the event with id 73):
+## Snapshot store example (snapshot created after the event with id 73):
 <table>
     <tr>
         <th>id</th>
@@ -104,8 +104,8 @@ Get final state of an account (reconstitute)
 
 
 -----
-
-# In progress:
+# TODO
+## In progress:
 - [ ] Investigate versioning for snapshots
 - [ ] Add event handler to achieve eventual consistency 
 - [ ] Create test database
