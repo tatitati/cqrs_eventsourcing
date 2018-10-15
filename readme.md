@@ -3,7 +3,7 @@
 
 ```
 composer install
-bin/console doctrine:database:creat
+bin/console doctrine:database:create
 bin/console doctrine:schema:create
 bin/phpunit
 ```
