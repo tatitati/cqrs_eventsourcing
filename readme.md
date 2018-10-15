@@ -79,7 +79,7 @@ Get final state of an account (reconstitute)
 </table>
 
 
-# Snapshot store example:
+# Snapshot store example (snapshot created after the event with id 73):
 <table>
     <tr>
         <th>id</th>
