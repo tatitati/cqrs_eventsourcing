@@ -55,10 +55,13 @@ class Account implements Aggregate
 
     public function updateBalance(int $newAmount)
     {
-        $this->recordAndApplyEvent(
-            new AccountWasUpdated(Uuid::uuid4()->toString(), $this->email, $newAmount, new DateTimeImmutable())
-        );
+        if ($newAmount > 0) {
+            $event = new AccountWasDeposited(Uuid::uuid4()->toString(), $this->email, $newAmount, new DateTimeImmutable());
+        } else {
+            $event = new AccountWasWithdrawed(Uuid::uuid4()->toString(), $this->email, $newAmount, new DateTimeImmutable());
+        }
 
+        $this->recordAndApplyEvent($event);
         return $this;
     }
 
@@ -107,9 +110,14 @@ class Account implements Aggregate
         $this->$applyMethod($event);
     }
 
-    private function applyAccountWasUpdated(AccountWasUpdated $event)
+    private function applyAccountWasDeposited(AccountWasDeposited $event)
     {
         $this->amount = $this->amount + $event->getAmount();
+    }
+
+    private function applyAccountWasWithdrawed(AccountWasWithdrawed $event)
+    {
+        $this->amount = $this->amount - $event->getAmount();
     }
 
     private function applyAccountWasCreated(AccountWasCreated $event)

@@ -41,6 +41,7 @@ class UpdateBalanceCommand extends ContainerAwareCommand
         $email = $input->getOption('email');
         $amount = $input->getOption('amount');
 
+
         $this->commandbus->handle(
             new UpdateBalanceRequest($amount, $email)
         );

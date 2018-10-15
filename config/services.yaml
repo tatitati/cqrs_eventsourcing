@@ -57,7 +57,7 @@ services:
         tags:
         - { name: tactician.handler, typehints: true }
 
-    App\Command\ApplicationServices\Account\History:
+    App\Command\ApplicationServices\Account\Reconstitute:
         tags:
         - { name: tactician.handler, typehints: true }
 
@@ -83,11 +83,11 @@ services:
         tags:
         -  { name: console.command, command: 'account:update' }
 
-    App\Command\Presentation\Console\Account\HistoryCommand:
+    App\Command\Presentation\Console\Account\ReconstituteCommand:
         arguments:
             $commandBus: '@tactician.commandbus'
         tags:
-        -  { name: console.command, command: 'account:history' }
+        -  { name: console.command, command: 'account:reconstitute' }
 
     App\Command\Presentation\Console\Account\TakeSnapshotCommand:
         arguments:

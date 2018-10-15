@@ -3,6 +3,7 @@ namespace App\Tests\Command\Infrastructure\Repository\DataModel;
 
 use App\Command\Infrastructure\Repository\DataModel\Event\EventStoreDataModel;
 use App\Tests\Builders\Account\BuilderAccountWasCreated;
+use App\Tests\Builders\Account\BuilderAccountWasDeposited;
 use App\Tests\Builders\Account\BuilderAccountWasUpdated;
 use App\Tests\Builders\BuilderEventStream;
 use DateTimeImmutable;
@@ -41,7 +42,7 @@ class EventStoreDbRepositoryTest extends KernelTestCase
                 $event1 = BuilderAccountWasCreated::any()
                     ->withEmail('example@email.com')
                     ->withCreatedAt(new DateTimeImmutable('1910-10-26 12:13:32'))->build(),
-                $event2 = BuilderAccountWasUpdated::any()
+                $event2 = BuilderAccountWasDeposited::any()
                     ->withEmail('example@email.com')
                     ->withCreatedAt(new DateTimeImmutable('1920-10-26 12:13:32'))->build(),
             ])->build();
@@ -66,7 +67,7 @@ class EventStoreDbRepositoryTest extends KernelTestCase
                 $event1 = BuilderAccountWasCreated::any()
                     ->withEmail('example@email.com')
                     ->withCreatedAt(new DateTimeImmutable('1910-10-26 12:13:32'))->build(),
-                $event2 = BuilderAccountWasUpdated::any()
+                $event2 = BuilderAccountWasDeposited::any()
                     ->withEmail('example@email.com')
                     ->withCreatedAt(new DateTimeImmutable('1920-10-26 12:13:32'))->build(),
         ])->build();

@@ -1,6 +1,8 @@
 <?php
 namespace App\Command\Infrastructure\Repository\DataModel\Event;
 
+use App\Command\Domain\Account\AccountWasDeposited;
+use App\Command\Domain\Account\AccountWasWithdrawed;
 use DateTimeImmutable;
 use Doctrine\Common\Persistence\ObjectManager;
 use App\Command\Domain\Account\AccountWasCreated;
@@ -92,8 +94,13 @@ class EventStoreDbRepository implements EventStoreRepository
         return AccountWasCreated::unserialize($event->getBodyEvent());
     }
 
-    private function unserialAccountWasUpdated(EventStoreDataModel $event): AccountWasUpdated
+    private function unserialAccountWasDeposited(EventStoreDataModel $event): AccountWasDeposited
     {
-        return AccountWasUpdated::unserialize($event->getBodyEvent());
+        return AccountWasDeposited::unserialize($event->getBodyEvent());
+    }
+
+    private function unserialAccountWasWithdrawed(EventStoreDataModel $event): AccountWasWithdrawed
+    {
+        return AccountWasWithdrawed::unserialize($event->getBodyEvent());
     }
 }

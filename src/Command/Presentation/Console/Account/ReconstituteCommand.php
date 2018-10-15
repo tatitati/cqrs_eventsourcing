@@ -2,13 +2,13 @@
 namespace App\Command\Presentation\Console\Account;
 
 use League\Tactician\CommandBus;
-use App\Command\ApplicationServices\Account\HistoryRequest;
+use App\Command\ApplicationServices\Account\ReconstituteRequest;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class HistoryCommand extends ContainerAwareCommand
+class ReconstituteCommand extends ContainerAwareCommand
 {
     /** @var CommandBus  */
     private $commandbus;
@@ -29,7 +29,7 @@ class HistoryCommand extends ContainerAwareCommand
         // php bin/console account:history --email='whatever'
 
         $this
-            ->setName('account:history')
+            ->setName('account:reconstitute')
             ->setDescription('Check last state of an account')
             ->addOption('email', null, InputOption::VALUE_REQUIRED, 'email?')
         ;
@@ -40,7 +40,7 @@ class HistoryCommand extends ContainerAwareCommand
         $email = $input->getOption('email');
 
         $this->commandbus->handle(
-            new HistoryRequest($email)
+            new ReconstituteRequest($email)
         );
     }
 }

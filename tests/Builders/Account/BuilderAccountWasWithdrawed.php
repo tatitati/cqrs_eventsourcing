@@ -1,12 +1,12 @@
 <?php
 namespace App\Tests\Builders\Account;
 
-use App\Command\Domain\Account\AccountWasUpdated;
+use App\Command\Domain\Account\AccountWasWithdrawed;
 use App\Tests\Builders\Builder;
 use DateTimeImmutable;
 use Faker;
 
-class BuilderAccountWasUpdated implements Builder
+class BuilderAccountWasWithdrawed implements Builder
 {
 
     private $eventId;
@@ -55,9 +55,9 @@ class BuilderAccountWasUpdated implements Builder
         return new self();
     }
 
-    public function build(): AccountWasUpdated
+    public function build(): AccountWasWithdrawed
     {
-        return new AccountWasUpdated(
+        return new AccountWasWithdrawed(
             $this->eventId,
             $this->email,
             $this->amount,

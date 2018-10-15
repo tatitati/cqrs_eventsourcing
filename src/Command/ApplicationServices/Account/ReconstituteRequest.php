@@ -1,7 +1,7 @@
 <?php
 namespace App\Command\ApplicationServices\Account;
 
-class HistoryRequest
+class ReconstituteRequest
 {
     private $email;
 

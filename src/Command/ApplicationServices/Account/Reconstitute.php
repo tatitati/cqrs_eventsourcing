@@ -4,7 +4,7 @@ namespace App\Command\ApplicationServices\Account;
 use App\Command\Infrastructure\Projections\Projector;
 use App\Command\Infrastructure\Repository\AccountRepository;
 
-class History
+class Reconstitute
 {
     /** @var AccountRepository */
     private $repository;
@@ -18,11 +18,14 @@ class History
         $this->projector = $projector;
     }
 
-    public function handle(HistoryRequest $command)
+    public function handle(ReconstituteRequest $command)
     {
         $account = $this->repository->findByEmail($command->getEmail());
+
         if (!$account) {
             return;
         }
+
+        print_r($account);
     }
 }

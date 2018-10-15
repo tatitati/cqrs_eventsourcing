@@ -3,7 +3,7 @@ namespace App\Tests\Builders;
 
 use App\Command\Domain\EventStream;
 use App\Tests\Builders\Account\BuilderAccountWasCreated;
-use App\Tests\Builders\Account\BuilderAccountWasUpdated;
+use App\Tests\Builders\Account\BuilderAccountWasDeposited;
 use Faker;
 
 class BuilderEventStream implements Builder
@@ -19,8 +19,8 @@ class BuilderEventStream implements Builder
         $this->id = $faker->word;
         $this->events = [
             BuilderAccountWasCreated::any()->build(),
-            BuilderAccountWasUpdated::any()->build(),
-            BuilderAccountWasUpdated::any()->build(),
+            BuilderAccountWasDeposited::any()->build(),
+            BuilderAccountWasDeposited::any()->build(),
         ];
     }
 
