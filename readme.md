@@ -1,6 +1,17 @@
-
 ## 1. Setup
+Install/run rabbitmq (our system publish async projections into rabbitmq)
+```
+brew install rabbitmq
+brew services start rabbitmq
+```
 
+Install/run mysql
+```
+brew install mysql
+brew services start mysql
+```
+
+Set code
 ```
 composer install
 bin/console doctrine:database:create
@@ -9,14 +20,9 @@ bin/phpunit
 ```
 
 
-## 2. Our system publish async projections into rabbitmq, so you need to start it:
-```
-brew install rabbitmq
-brew services start rabbitmq
-```
 
 
-## 3. Now you can play, for example:
+## 2. Now you can play, for example:
 ```
 php bin/console account:create --email='whatever' --amount=10
 php bin/console account:update --email='whatever' --amount=-1000
