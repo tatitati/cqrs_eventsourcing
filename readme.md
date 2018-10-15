@@ -34,7 +34,7 @@ Create some more events if you wish after an snapshot
 
 Get final state of an account (reconstitute)
 
-```php bin/console account:history --email='whatever'```
+```php bin/console account:reconstitute --email='whatever'```
 
 
 
