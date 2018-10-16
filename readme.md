@@ -27,7 +27,6 @@ bin/phpunit
 php bin/console account:create --email='whatever' --amount=10
 php bin/console account:update --email='whatever' --amount=25
 php bin/console account:update --email='whatever' --amount=-7
-php bin/console account:update --email='whatever' --amount=1000
 ```
 
 Create snapshot (this should be automated with a cron job)
