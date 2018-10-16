@@ -115,7 +115,7 @@ Get final state of an account (reconstitute)
 - [x] Create domain model with events
 - [x] Create Event store
 - [ ] Improve seralization of events -> use symfony component
-- [ ] Serialization should be moved from domain model?, is an infrastructure concern
+- [ ] Serialization should be moved from domain model, is an infrastructure concern
 - [x] Create Snapshots store
 - [x] Create Projector to trigger Async projections to read model
 - [x] Create repository for events
